@@ -27,11 +27,7 @@
    Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    </license>
 **/
-/*
-http://newage.orange-concept.com/GSWeb/ldapExplorer.gswa?ldapHost=newage&ldapPort=389&ldapBaseDN=ou%3Doxyroot
-ldapBindDN
-ldapBindPassword
-*/
+
 #include <GSWeb/GSWeb.h>
 #include "GSLDAPWebExplorer.h"
 
