@@ -1,7 +1,7 @@
      defaults = {
                     GSWAdaptor = GSWDefaultAdaptor;
                     GSWDebugSetConfigFilePath = "/etc/gsweb/ldapExplorer.logstate";
-                    GSWHost = "newage.orange-concept.com";
+                    GSWHost = "localhost";
                     GSWPort = 9010;
                     GSWApplicationBaseURL = "/GSW";
                     GSWFrameworksBaseURL = "/GSW/frameworks";                        
