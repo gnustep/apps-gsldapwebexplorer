@@ -1,0 +1,32 @@
+Template: GSLDAPWETemplate
+{
+}
+
+Tree: GSLDAPWETree
+{
+        dn = session.ldapConnection.defaultBaseDN;
+        selectedDNs = selectedDNs;
+};
+
+IsConnectionValid: GSWConditional
+{
+        condition = session.ldapConnection.connect;
+}
+
+IsNotConnectionValid: GSWConditional
+{
+        condition = session.ldapConnection.connect;
+        negate = YES;
+}
+
+Parameters: GSLDAPWEParameters
+{
+}
+
+ParametersToggle: GSWCollapsibleComponentContent
+{
+    condition = isParametersDisplayed;
+    closedLabel = "Show Parameters";
+    openedLabel = "Parameters";
+}
+

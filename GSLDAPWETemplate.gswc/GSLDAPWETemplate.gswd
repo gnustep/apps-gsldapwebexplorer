@@ -1,0 +1,21 @@
+Content: GSWComponentContent
+{
+};
+
+ParametersPage: GSWHyperlink
+{
+        pageName = "GSLDAPWEParameters";
+        string = "Parameters";
+}
+
+TreePage: GSWHyperlink
+{
+        pageName = "Main";
+        string = "Tree";
+}
+
+SchemaPage: GSWHyperlink
+{
+        pageName = "GSLDAPWESchema";
+        string = "Schema";
+}

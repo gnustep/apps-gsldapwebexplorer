@@ -1,0 +1,29 @@
+Form: GSWForm
+{
+};
+
+Host: GSWTextField
+{
+        value = session.ldapConnection.host;
+}
+Port: GSWTextField
+{
+        value = session.ldapConnection.port;
+}
+Base: GSWTextField
+{
+        value = session.ldapConnection.defaultBaseDN;
+}
+BindDN: GSWTextField
+{
+        value = session.ldapConnection.bindDN;
+}
+BindPassword: GSWPasswordField
+{
+        value = session.ldapConnection.bindPassword;
+}
+
+ValidateButton: GSWSubmitButton
+{
+        action = validateAction;
+}

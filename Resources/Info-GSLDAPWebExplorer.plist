@@ -1,0 +1,14 @@
+     defaults = {
+                    GSWAdaptor = GSWDefaultAdaptor;
+                    GSWDebugSetConfigFilePath = "/etc/gsweb/ldapExplorer.logstate";
+                    GSWHost = "newage.orange-concept.com";
+                    GSWPort = 9010;
+                    GSWApplicationBaseURL = "/GSW";
+                    GSWFrameworksBaseURL = "/GSW/frameworks";                        
+                    GSWLoadFrameworks = (
+                                            "GSWExtensionsGSW",
+                                            "GSWExtensions"
+                                        );
+                    GSWMonitorAppConfFilePath = "/etc/httpd/conf/GSWebMonitor.conf";
+                    GSWSessionTimeOut = 1200;
+                };

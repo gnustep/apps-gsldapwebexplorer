@@ -1,0 +1,5 @@
+ElementComponent: GSWSwitchComponent
+{
+        componentName = elementComponentName;
+        elementName = elementName;
+}

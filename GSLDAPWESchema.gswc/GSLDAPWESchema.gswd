@@ -1,0 +1,93 @@
+Template: GSLDAPWETemplate
+{
+}
+
+ObjectClassesToggle: GSWCollapsibleComponentContent
+{
+    condition = isObjectClassesSelected;
+    closedLabel = "Object Classes List";
+    openedLabel = "Object Classes";
+}
+
+AttributeTypesToggle: GSWCollapsibleComponentContent
+{
+    condition = isAttributeTypesSelected;
+    closedLabel = "Attribute Types List";
+    openedLabel = "Attribute Types";
+}
+
+MatchingRulesToggle: GSWCollapsibleComponentContent
+{
+    condition = isMatchingRulesSelected;
+    closedLabel = "Matching Rules List";
+    openedLabel = "Macching Rules";
+}
+
+SyntaxesToggle: GSWCollapsibleComponentContent
+{
+    condition = isSyntaxesSelected;
+    closedLabel = "Syntaxes List";
+    openedLabel = "Syntaxes";
+}
+
+ObjectClassesRepetition: GSWRepetition
+{
+        list  = objectClassNames;
+        item = tmpObjectClassName;
+}
+
+ObjectClassLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpObjectClassName.encodeURL;
+        ?elementType="objectClass";
+        string = tmpObjectClassName;
+}
+
+AttributeTypesRepetition: GSWRepetition
+{
+        list =attributeNames;
+        item = tmpAttributeName;
+}
+
+AttributeTypeLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpAttributeName.encodeURL;
+        ?elementType="attribute";
+        string = tmpAttributeName;
+}
+
+MatchingRulesRepetition: GSWRepetition
+{
+        list  = matchingRuleNames;
+        item = tmpMatchingRuleName;
+}
+
+MatchingRuleLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpMatchingRuleName.encodeURL;
+        ?elementType="matchingRule";
+        string = tmpMatchingRuleName;
+}
+
+SyntaxesRepetition: GSWRepetition
+{
+        list  = syntaxNames;
+        item = tmpSyntaxName;
+}
+
+SyntaxLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpSyntaxName.encodeURL;
+        ?elementType="syntax";
+        string = tmpSyntaxName;
+}
+
+SyntaxDesc: GSWString
+{
+        value = syntaxDescriptionText;
+};
+

@@ -1,0 +1,65 @@
+  <gsweb name="Template">
+      <center>
+        <gsweb name="Form">
+          <h2>
+            <gsweb name="IsNotAddition">
+              <gsweb name="DN"></gsweb>
+            </gsweb>
+            <gsweb name="IsAddition">
+              <gsweb name="RDN"></gsweb><gsweb name="ParentDN"></gsweb>
+            </gsweb>        
+          </h2>
+          <p><gsweb name="Message"></gsweb></p>
+          <gsweb name="IsDeletion">
+            <gsweb name="IsNotDeleted">
+              <gsweb name="RecursiveReallyDeleteButton"></gsweb> | <gsweb name="ReallyDeleteButton"></gsweb> | <gsweb name="DontDeleteButton"></gsweb>
+            </gsweb>
+          </gsweb>
+          <gsweb name="IsNotDeletion">
+            <table border="1" width="80%">
+              <gsweb name="AllAttributesRepetition">
+                <tr>
+                  <th align="right"><gsweb name="AttributeLink"></gsweb><gsweb name="IsMandatoryAttribute"> * </gsweb><gsweb name="IsNotAllowedAttribute"> - </gsweb><br/>
+                      <gsweb name="AddAttributeValueButton"></gsweb></th>
+                  <td width="75%">
+                    <table>            
+                      <gsweb name="AttributeValuesRepetition">
+                        <tr>
+                          <td>
+                          <gsweb name="IsObjectClassAttribute">
+                              <gsweb name="ObjectClassAttributeValue"></gsweb>
+                            </gsweb>
+                            <gsweb name="IsNotObjectClassAttribute">
+                              <gsweb name="AttributeValue"></gsweb>
+                            </gsweb>
+                          </td>
+                        </tr>
+                      </gsweb>
+                    </table>
+                  </td>
+                </tr>
+              </gsweb>
+              <tr>
+                <td>
+                <gsweb name="HasSchema">
+                    <gsweb name="AddAttributeNamePopUp"></gsweb>
+                  </gsweb>
+                  <gsweb name="HasNotSchema">
+                    <gsweb name="AddAttributeNameTextField"></gsweb>
+                  </gsweb>
+                  <gsweb name="AddAttributeButton"></gsweb>
+                </td>
+              </tr>
+          </table>
+          <gsweb name="RefreshButton"></gsweb> |
+          <gsweb name="IsAddition">
+            <gsweb name="AddButton"></gsweb>
+          </gsweb>
+          <gsweb name="IsNotAddition">
+            <gsweb name="UpdateButton"></gsweb> |
+            <gsweb name="DeleteButton"></gsweb>
+          </gsweb>
+        </gsweb>
+      </gsweb>
+    </center>
+  </gsweb>

@@ -1,0 +1,67 @@
+Template: GSLDAPWETemplate
+{
+}
+
+RootEntriesRepetition: GSWRepetition
+{
+        list = subDNs;
+        item = tmpDN;
+};
+
+Anchor: GSWGenericContainer
+{
+        elementName = "a";
+        name = tmpDN.encodeURL;
+};
+
+DisplaySubEntriesLink: GSWHyperlink
+{
+        action = selectEntryAction;
+        string = "+";
+        disabled = isPartOfSelected;
+        displayDisabled = NO;
+        fragmentIdentifier = tmpDN.encodeURL;
+};
+
+UndisplaySubEntriesLink: GSWHyperlink
+{
+        action = unselectEntryAction;
+        string = "-";
+        enabled = isPartOfSelected;
+        displayDisabled = NO;
+        fragmentIdentifier = tmpDN.encodeURL;
+};
+
+EntryPopUpLabeledLink: GSWHyperlink
+{
+        pageName = "GSLDAPWEEntryPage";
+        ?dn=tmpDN.encodeURL;
+        string = tmpRDN;
+};
+
+AddEntryPopUpLabeledLink:  GSWHyperlink
+{
+        pageName = "GSLDAPWEEntryPage";
+        ?dn=tmpDN.encodeURL;
+        ?action="addEntry";
+        string = "[Add]";
+};
+DeleteEntryPopUpLabeledLink: GSWHyperlink
+{
+        pageName = "GSLDAPWEEntryPage";
+        ?dn=tmpDN.encodeURL;
+        ?action="deleteEntry";
+        string = "[Delete]";
+};
+
+IsPartOfSelected: GSWConditional
+{
+        condition = isPartOfSelected;
+}
+
+Tree: GSLDAPWETree
+{
+        dn = tmpDN;
+        selectedDNs = selectedDNs;
+};
+

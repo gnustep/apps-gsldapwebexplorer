@@ -1,0 +1,19 @@
+Template: GSLDAPWETemplate
+{
+}
+
+Name: GSWString
+{
+        value = ldapElement.name;
+};
+
+Description: GSWString
+{
+        value = ldapElement.descriptionText;
+};
+
+OID: GSWString
+{
+        value = ldapElement.oid;        
+};
+

@@ -1,0 +1,205 @@
+Template: GSLDAPWETemplate
+{
+}
+
+DN: GSWString
+{
+        value = entry.dn;
+}
+
+IsNotAddition: GSWConditional
+{
+        condition = isAddition;
+        negate = YES;
+};
+
+IsAddition: GSWConditional
+{
+        condition = isAddition;
+};
+
+IsDeletion: GSWConditional
+{
+        condition = isDeletion;
+};
+IsNotDeletion: GSWConditional
+{
+        condition = isDeletion;
+        negate = YES;
+};
+
+IsDeleted: GSWConditional
+{
+        condition = isDeleted;
+};
+
+IsNotDeleted: GSWConditional
+{
+        condition = isDeleted;
+        negate = YES;
+};
+
+RDN: GSWTextField
+{
+        value = _entry.rdn;
+};
+
+ParentDN: GSWString
+{
+        value = parentDN;
+};
+
+Form: GSWForm
+{
+        multipleSubmit = YES;
+}
+
+AllAttributesRepetition: GSWRepetition
+{
+        list = allAttributeNames;
+        item = tmpAttributeName;
+}
+
+AttributeName: GSWString
+{
+        value = tmpAttributeName;
+}
+
+AttributeLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpAttributeName.encodeURL;
+        ?elementType="attribute";
+        string = tmpAttributeName;
+}
+
+IsMandatoryAttribute: GSWConditional
+{
+        condition = isMandatoryAttribute;
+}
+
+IsNotAllowedAttribute: GSWConditional
+{
+        condition = isAllowedAttribute;
+        negate = YES;
+}
+
+AddAttributeValueButton: GSWSubmitButton
+{
+        action = addAttributeValueAction;
+        value = "Add";
+}
+
+AttributeValuesRepetition: GSWRepetition
+{
+        list = tmpAttributeValues;
+        index = attributeValueIndex;
+};
+
+AttributeValue: GSWTextField
+{
+        value = attributeValue;
+        size = 25;
+}
+
+ObjectClassAttributeValue: GSWPopUpButton
+{
+   value=tmpObjectClassName;
+   list = allObjectClassNames;
+   item = tmpObjectClassName;
+   selection = attributeValue;
+   displayString = tmpObjectClassName;
+   noSelectionString = "";
+};
+
+IsObjectClassAttribute: GSWConditional
+{
+        condition = isObjectClassAttribute;
+};
+
+IsNotObjectClassAttribute: GSWConditional
+{
+        condition = isObjectClassAttribute;
+        negate = YES;
+};
+
+HasSchema: GSWConditional
+{
+        condition = hasSchema;
+};
+
+HasNotSchema: GSWConditional
+{
+        condition = hasSchema;
+        negate = YES;
+};
+
+AddAttributeNamePopUp: GSWPopUpButton
+{
+   value= tmpAttributeName;
+   list = allPossibleAttributeNames;
+   item = tmpAttributeName;
+   selection = tmpAddAttributeName;
+   displayString = tmpAttributeName;
+   noSelectionString = "";
+};
+
+AddAttributeNameTextField: GSWTextField
+{
+        value = tmpAddAttributeName;
+};
+
+AddAttributeButton: GSWSubmitButton
+{
+        action = addAttributeNameAction;
+        value = "Add"
+}
+
+UpdateButton: GSWSubmitButton
+{
+        action = updateAction;
+        value = "Update";
+};
+
+AddButton: GSWSubmitButton
+{
+        action = addAction;
+        value = "Add";
+};
+
+DeleteButton: GSWSubmitButton
+{
+        action = deleteAction;
+        value = "Delete";
+};
+
+RefreshButton: GSWSubmitButton
+{
+        action = refreshAction;
+        value = "refresh";
+};
+
+ReallyDeleteButton: GSWSubmitButton
+{
+        action = reallyDeleteAction;
+        value = "Delete";
+};
+
+RecursiveReallyDeleteButton: GSWSubmitButton
+{
+        action = recursiveReallyDeleteAction;
+        value = "Recursive Delete";
+};
+
+DontDeleteButton: GSWSubmitButton
+{
+        action = dontDeleteAction;
+        value = "Don't Delete";
+};
+Message: GSWString
+{
+        value = tmpMessage;
+        convertHTML = YES;
+        convertHTMLEntities = YES;
+        escapeHTML = YES;
+};

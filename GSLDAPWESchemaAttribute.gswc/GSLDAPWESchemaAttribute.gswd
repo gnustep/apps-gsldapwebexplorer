@@ -1,0 +1,37 @@
+Template: GSLDAPWETemplate
+{
+}
+
+Name: GSWString
+{
+        value = ldapElement.name;
+};
+
+OID: GSWString
+{
+        value = ldapElement.oid;        
+};
+
+Names: GSWString
+{
+        value = ldapElement.namesString;
+};
+
+SyntaxLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=ldapElement.syntax.oid.encodeURL;
+        ?elementType="syntax";
+        string = ldapElement.syntax.oid;
+};
+
+SyntaxDesc: GSWString
+{
+        value = ldapElement.syntax.descriptionText;
+};
+
+Description: GSWString
+{
+        value = ldapElement.descriptionText;
+};
+

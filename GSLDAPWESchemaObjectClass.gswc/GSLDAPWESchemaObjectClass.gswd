@@ -1,0 +1,52 @@
+Template: GSLDAPWETemplate
+{
+}
+
+Name: GSWString
+{
+        value = ldapElement.namesString;
+};
+
+Description: GSWString
+{
+        value = ldapElement.descriptionText;
+};
+
+OID: GSWString
+{
+        value = ldapElement.oid;        
+};
+
+SuperiorsRepetition: GSWRepetition
+{
+        list = ldapElement.superiors;
+        item = tmpSuperior;
+};
+
+SuperiorLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpSuperior.name.encodeURL;
+        ?elementType="objectClass";
+        string = tmpSuperior.name;
+};
+
+RequiredAttributesRepetition: GSWRepetition
+{
+        list = ldapElement.mandatoryAttributeNames;
+        item = tmpAttributeName;
+};
+
+AllowedAttributesRepetition: GSWRepetition
+{
+        list = ldapElement.nonMandatoryAttributeNames;
+        item = tmpAttributeName;
+};
+
+AttributeLink: GSWHyperlink
+{
+        pageName = "GSLDAPWESchemaElementPage";
+        ?elementName=tmpAttributeName.encodeURL;
+        ?elementType="attribute";
+        string = tmpAttributeName;
+};
