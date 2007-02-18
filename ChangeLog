@@ -1,0 +1,3 @@
+2007-02-18  Nicola Pero <nicola.pero@meta-innovation.com>
+
+	* GNUmakefile: Do not define GNUSTEP_MAKEFILES
