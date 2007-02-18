@@ -47,6 +47,7 @@ ifeq ($(GSWDEBUG), yes)
 endif
 
 # Additional include directories the compiler should search
+# FIXME: These additional include don't make much sense
 ADDITIONAL_INCLUDE_DIRS =  -I$(GNUSTEP_SYSTEM_ROOT)/db -I../ -I$(GNUSTEP_SYSTEM_HEADERS)/Frameworks -I$(GNUSTEP_SYSTEM_HEADERS)/gsweb -I$(GNUSTEP_SYSTEM_HEADERS)/libnsldap
 
 # Additional LDFLAGS to pass to the linker
@@ -67,6 +68,7 @@ ADDITIONAL_LDFLAGS := $(ADDITIONAL_LDFLAGS) `Magick-config --ldflags --libs`
 #-lgnustep-xraw
 
 # Additional library directories the linker should search
+# FIXME: These additional lib dirs don't make much sense
 ADDITIONAL_LIB_DIRS = -L../src/$(GNUSTEP_OBJ_DIR) -L$(GNUSTEP_SYSTEM_ROOT)/lib -L$(GNUSTEP_FRAMEWORKS_LIBRARIES)/$(GNUSTEP_TARGET_LDIR)
 
 #
