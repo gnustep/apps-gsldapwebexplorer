@@ -51,12 +51,7 @@ endif
 ADDITIONAL_INCLUDE_DIRS =  -I$(GNUSTEP_SYSTEM_ROOT)/db -I../ -I$(GNUSTEP_SYSTEM_HEADERS)/Frameworks -I$(GNUSTEP_SYSTEM_HEADERS)/gsweb -I$(GNUSTEP_SYSTEM_HEADERS)/libnsldap
 
 # Additional LDFLAGS to pass to the linker
-# Additional LDFLAGS to pass to the linker
-ifeq ($(debug), yes)
-	ADDITIONAL_LDFLAGS = -lGSANTLR_d -lGSWeb -lgnustep-db2_d -lgnustep-db2control_d  -lgsldap_d
-else
-	ADDITIONAL_LDFLAGS = -lGSANTLR -lGSWeb -lgnustep-db2 -lgnustep-db2control  -lgsldap
-endif
+ADDITIONAL_LDFLAGS = -lGSANTLR -lGSWeb -lgnustep-db2 -lgnustep-db2control  -lgsldap
 
 ifeq ($(LIBWRAP), yes)
 	ADDITIONAL_OBJCFLAGS := $(ADDITIONAL_OBJCFLAGS) -DHAVE_LIBWRAP

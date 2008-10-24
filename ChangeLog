@@ -1,3 +1,9 @@
+2008-10-24  Nicola Pero <nicola.pero@meta-innovation.com>
+
+	* Makefile.preamble (ADDITIONAL_LDFLAGS): Updated for gnustep-make
+	v2: removed separate version for debug=yes that used libraries
+	ending in _d.
+
 2007-02-18  Nicola Pero <nicola.pero@meta-innovation.com>
 
 	* GNUmakefile: Do not define GNUSTEP_MAKEFILES
